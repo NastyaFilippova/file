@@ -17,7 +17,25 @@ with open('recipes.txt', 'r', encoding='utf-8') as file:
             cook_book[cook_name] = products_list
         return cook_book
 
-    print(get_cook_list())
+    # print(get_cook_list())
+
+    def get_shop_list_by_dishes(dishes, person_count):
+        cook_book = get_cook_list()
+        shop_list_by_dishes = {}
+        for dish in dishes:
+            dish_recipe = cook_book.get(dish)
+            # print(dish_recipe)
+            for recipes in dish_recipe:
+                # print(recipes)
+                # person_count_quantity = int(recipes['quantity']) * int(person_count)
+                shop_list_by_dishes[recipes['ingredient_name']] = {'measure': recipes['measure'], 'quantity': int(recipes['quantity']) * int(person_count)}
+        return shop_list_by_dishes
+    
+    print(get_shop_list_by_dishes(['Омлет', 'Запеченный картофель'], '2'))
+
+
+
+
 
 
 
