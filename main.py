@@ -30,8 +30,8 @@ with open('recipes.txt', 'r', encoding='utf-8') as file:
                 # person_count_quantity = int(recipes['quantity']) * int(person_count)
                 shop_list_by_dishes[recipes['ingredient_name']] = {'measure': recipes['measure'], 'quantity': int(recipes['quantity']) * int(person_count)}
         return shop_list_by_dishes
-    
-    print(get_shop_list_by_dishes(['Омлет', 'Запеченный картофель'], '2'))
+
+    print(get_shop_list_by_dishes(['Утка по-пекински', 'Запеченный картофель'], '3'))
 
 
 
